@@ -1,9 +1,5 @@
-// Definition of the Routes for the Patients Info
-const express = require('express');
-const router = express.Router();
-
-// Route to get all Patients
-router.get('/', (req, res, next) => {
+// Controllers Definitions for the Patients Routes
+exports.patientsGET = (req, res, next) => {
     let patients = [
         {
             name: "Joao",
@@ -20,7 +16,4 @@ router.get('/', (req, res, next) => {
         message: "List of Patients",
         patients: patients,
     })
-
-});
-
-module.exports = router;
+};

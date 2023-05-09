@@ -1,6 +1,15 @@
 const express = require('express');
 const app = express();
 const patientsRoutes = require("./api/routes/patients");
+const swaggerUi = require('swagger-ui-express');
+const yamljs = require('yamljs');
+
+const path = require('path');
+const swagger_path =  path.resolve(__dirname,'./swagger.yaml');
+const swaggerDocument = yamljs.load(swagger_path);
+
+// Setting Swagger
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Allow the access to the API from other sites
 app.use((req, res, next) => {
