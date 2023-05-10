@@ -8,8 +8,10 @@ const path = require('path');
 const swagger_path =  path.resolve(__dirname,'./swagger.yaml');
 const swaggerDocument = yamljs.load(swagger_path);
 
-// Setting Swagger
+// Setting Middleware & Swagger
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
 
 // Allow the access to the API from other sites
 app.use((req, res, next) => {

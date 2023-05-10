@@ -5,5 +5,6 @@ const router = express.Router();
 
 // Route to get all Patients
 router.get('/', controllers.patientsGET);
+router.post('/', controllers.patientsPOST);
 
 module.exports = router;

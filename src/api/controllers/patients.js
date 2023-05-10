@@ -1,5 +1,5 @@
 // Controllers Definitions for the Patients Routes
-exports.patientsGET = (req, res, next) => {
+const patientsGET = (req, res, next) => {
     let patients = [
         {
             name: "Joao",
@@ -12,8 +12,16 @@ exports.patientsGET = (req, res, next) => {
             city: "Porto",
         },
     ];
-    res.status(200).json({
-        message: "List of Patients",
-        patients: patients,
-    })
+    res.status(200).json(patients)
 };
+
+const patientsPOST = (req, res, next) => {
+    let {name, age, city} = req.body;
+    if(name && age && city) {
+        res.status(200).json("User Created")
+    } else {
+        res.status(400).json("Unable to Create User")
+    }
+};
+
+exports.modules = {patientsGET, patientsPOST};
