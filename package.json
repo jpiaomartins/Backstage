@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/index.js"
+    "start": "nodemon -e js,json,yaml ./src/index.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,8 @@
     "express": "^4.18.2",
     "swagger-ui-express": "^4.6.2",
     "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }
