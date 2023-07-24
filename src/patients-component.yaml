@@ -1,0 +1,18 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: patients
+  # This is an extra long description with Markdown
+  description: |
+    This page is an example page for a simple API
+  links:
+    - url: https://dev.azure.com/SocialHealthcare-Backstage/Backstage/_git/PatientsWebAPI
+      title: Azure DevOps Repo
+      icon: github
+spec:
+  type: service
+  lifecycle: experimental
+  owner: sns24
+  providesApis:
+    - patients
+    - patients
